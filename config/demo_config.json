@@ -1,0 +1,25 @@
+{
+  "datastore": {
+    "path": "data/openscholar_datastore",
+    "index_type": "HNSW",
+    "embedding_dim": 768
+  },
+  "retriever": {
+    "model_name": "facebook/contriever",
+    "use_semantic_scholar": true,
+    "use_web_search": false
+  },
+  "reranker": {
+    "model_name": "BAAI/bge-reranker-large"
+  },
+  "generator": {
+    "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+    "temperature": 0.7,
+    "max_iterations": 3
+  },
+  "pipeline": {
+    "initial_retrieval_k": 100,
+    "rerank_k": 50,
+    "final_k": 20
+  }
+}

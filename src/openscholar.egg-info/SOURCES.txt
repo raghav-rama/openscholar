@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/openscholar/__init__.py
+src/openscholar/data_generation.py
+src/openscholar/datastore.py
+src/openscholar/evaluation.py
+src/openscholar/generator.py
+src/openscholar/pipeline.py
+src/openscholar/retriever.py
+src/openscholar.egg-info/PKG-INFO
+src/openscholar.egg-info/SOURCES.txt
+src/openscholar.egg-info/dependency_links.txt
+src/openscholar.egg-info/requires.txt
+src/openscholar.egg-info/top_level.txt
