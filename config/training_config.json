@@ -1,0 +1,37 @@
+{
+  "output_dir": "outputs/openscholar_training",
+  "use_wandb": false,
+  "prepare_datastore": true,
+  "generate_data": true,
+  "train_retriever": true,
+  "train_generator": true,
+  "datastore": {
+    "path": "data/openscholar_datastore",
+    "papers_path": "data/papers.json",
+    "index_type": "HNSW",
+    "embedding_dim": 768,
+    "max_papers": 10000
+  },
+  "data_generation": {
+    "model_name": "meta-llama/Llama-3.1-70B-Instruct",
+    "num_papers": 1000,
+    "queries_per_paper": 3,
+    "synthetic_ratio": 0.5
+  },
+  "retriever": {
+    "model_name": "facebook/contriever",
+    "num_epochs": 3,
+    "batch_size": 32,
+    "learning_rate": 1e-05
+  },
+  "reranker": {
+    "model_name": "BAAI/bge-reranker-large"
+  },
+  "generator": {
+    "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+    "num_epochs": 3,
+    "batch_size": 4,
+    "learning_rate": 2e-05,
+    "use_lora": true
+  }
+}
